@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f2f2f2;
+display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:220px;
+background:#2c5fb8;
+height:100vh;
+color:white;
+padding-top:30px;
+}
+
+.sidebar h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.menu{
+padding:15px 25px;
+cursor:pointer;
+}
+
+.menu:hover{
+background:#1f4a96;
+}
+
+/* Main Content */
+
+.main{
+flex:1;
+padding:40px;
+}
+
+/* Card */
+
+.card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+width:900px;
+}
+
+/* Header */
+
+.header{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+.employee-img{
+width:140px;
+height:140px;
+border-radius:10px;
+object-fit:cover;
+}
+
+.name{
+font-size:28px;
+font-weight:bold;
+}
+
+/* Details */
+
+.row{
+display:flex;
+padding:12px 0;
+border-bottom:1px solid #eee;
+}
+
+.label{
+width:220px;
+font-weight:bold;
+color:#2c5fb8;
+}
+
+.value{
+flex:1;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>Menu</h2>
+
+<div class="menu" onclick="showDashboard()">Dashboard</div>
+<div class="menu" onclick="showPayroll()">Payroll</div>
+<div class="menu" onclick="showAttendance()">Attendance</div>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+<div id="content"></div>
+
+</div>
+
+<script>
+
+/* Dashboard */
+
+function showDashboard(){
+
+document.getElementById("content").innerHTML = `
+
+<div class="card">
+
+<div class="header">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg" class="employee-img">
+
+<div class="name">Rajesh Kumar</div>
+
+</div>
+
+<div class="row">
+<div class="label">Employee ID</div>
+<div class="value">EMP101</div>
+</div>
+
+<div class="row">
+<div class="label">Department ID</div>
+<div class="value">D102</div>
+</div>
+
+<div class="row">
+<div class="label">Position</div>
+<div class="value">Software Engineer</div>
+</div>
+
+<div class="row">
+<div class="label">Date of Joining</div>
+<div class="value">12 March 2022</div>
+</div>
+
+<div class="row">
+<div class="label">Email</div>
+<div class="value">rajesh.kumar@example.com</div>
+</div>
+
+<div class="row">
+<div class="label">Phone Number</div>
+<div class="value">+91 9876543210</div>
+</div>
+
+<div class="row">
+<div class="label">Bank Name</div>
+<div class="value">State Bank of India</div>
+</div>
+
+<div class="row">
+<div class="label">Account Number</div>
+<div class="value">123456789012</div>
+</div>
+
+<div class="row">
+<div class="label">Status</div>
+<div class="value">Active</div>
+</div>
+
+</div>
+
+`;
+
+}
+
+/* Payroll */
+
+function showPayroll(){
+
+document.getElementById("content").innerHTML = `
+
+<div class="card">
+
+<h2>Payroll Details</h2>
+
+<div class="row">
+<div class="label">Employee ID</div>
+<div class="value">EMP101</div>
+</div>
+
+<div class="row">
+<div class="label">Professional Tax</div>
+<div class="value">₹200</div>
+</div>
+
+<div class="row">
+<div class="label">PF</div>
+<div class="value">₹1800</div>
+</div>
+
+<div class="row">
+<div class="label">ESI</div>
+<div class="value">₹750</div>
+</div>
+
+<div class="row">
+<div class="label">Loan Recovery</div>
+<div class="value">₹500</div>
+</div>
+
+<div class="row">
+<div class="label">Income Tax</div>
+<div class="value">₹2500</div>
+</div>
+
+<div class="row">
+<div class="label">Transaction ID</div>
+<div class="value">TXN987654</div>
+</div>
+
+</div>
+
+`;
+
+}
+
+/* Attendance */
+
+function showAttendance(){
+
+document.getElementById("content").innerHTML = `
+
+<div class="card">
+
+<h2>Attendance Details</h2>
+
+<div class="row">
+<div class="label">Employee ID</div>
+<div class="value">EMP101</div>
+</div>
+
+<div class="row">
+<div class="label">Attendance ID</div>
+<div class="value">ATT567</div>
+</div>
+
+<div class="row">
+<div class="label">Month</div>
+<div class="value">March</div>
+</div>
+
+<div class="row">
+<div class="label">Year</div>
+<div class="value">2026</div>
+</div>
+
+<div class="row">
+<div class="label">Total Working Days</div>
+<div class="value">26</div>
+</div>
+
+<div class="row">
+<div class="label">Days Present</div>
+<div class="value">24</div>
+</div>
+
+<div class="row">
+<div class="label">Leave Taken</div>
+<div class="value">2</div>
+</div>
+
+<div class="row">
+<div class="label">Over Time</div>
+<div class="value">5 Hours</div>
+</div>
+
+</div>
+
+`;
+
+}
+
+/* Default Page */
+
+showDashboard();
+
+</script>
+
+</body>
+</html>
